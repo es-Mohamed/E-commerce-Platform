@@ -24,7 +24,7 @@ Tech Stack and Tools
 
 Project Structure (important locations)
 -------------------------------------
-- Project README: [E-commerce-Platform/README.md](E-commerce-Platform/README.md)
+- Project README: [README.md](README.md)
 - Django settings: [/E-commerce-Platform/settings.py](E-commerce-Platform/settings.py)
 - Django management script: [E-commerce-Platform/manage.py](/E-commerce-Platform/manage.py)
 - Local database file: [E-commerce-Platform/db.sqlite3](E-commerce-Platform/db.sqlite3)
