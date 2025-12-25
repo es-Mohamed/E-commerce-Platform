@@ -1,12 +1,15 @@
 from pathlib import Path
+import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Load secrets and flags from environment for security.
+# Keep sensible defaults for local development only.
+SECRET_KEY = os.environ.get('SECRET_KEY', 'change-me-for-local-testing-only')
+DEBUG = os.environ.get('DEBUG', 'False') in ('1', 'True', 'true')
 
-SECRET_KEY = 'django-insecure-7z^&p^t$ad76n#-u0lht_^d(&28if3c#b@$sfnxfzpr@+fec^t'
-DEBUG = True
-
-ALLOWED_HOSTS = []
+# Example: set DJANGO_ALLOWED_HOSTS="example.com 127.0.0.1"
+ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', 'localhost 127.0.0.1').split()
 
 LOGIN_URL = "/login/"
 LOGIN_REDIRECT_URL = "/"
