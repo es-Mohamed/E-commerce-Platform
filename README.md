@@ -2,7 +2,7 @@
 
 Description
 -----------
-`Faster-Parts` is a local e-commerce platform based on Django (located in `Faster-Parts`). The project includes apps for item management, shopping cart, user dashboard, and user-to-user conversations.
+`E-commerce-Platform` is a local e-commerce platform based on Django (located in `E-commerce-Platform`). The project includes apps for item management, shopping cart, user dashboard, and user-to-user conversations.
 
 Features and What the Project Provides
 -------------------------------------
@@ -25,9 +25,9 @@ Tech Stack and Tools
 Project Structure (important locations)
 -------------------------------------
 - Project README: [README.md](README.md)
-- Django settings: [/E-commerce-Platform/settings.py](E-commerce-Platform/settings.py)
-- Django management script: [E-commerce-Platform/manage.py](/E-commerce-Platform/manage.py)
-- Local database file: [E-commerce-Platform/db.sqlite3](E-commerce-Platform/db.sqlite3)
+- Django settings: [settings.py](settings.py)
+- Django management script: [manage.py](manage.py)
+- Local database file: [db.sqlite3](db.sqlite3)
 - Virtual environment folder: [env](env)
 
 Quick: How to Set Up and Run (Windows)
@@ -38,7 +38,7 @@ Quick: How to Set Up and Run (Windows)
 .\env\Scripts\activate
 ```
 
-2. Install requirements (if `requirements.txt` exists in `Faster-Parts`):
+2. Install requirements (if `requirements.txt` exists in `E-commerce-Platform`):
 
 ```powershell
 pip install -r Faster-Parts-Project\requirements.txt
@@ -60,7 +60,7 @@ python Faster-Parts\E-commerce-Platform\manage.py runserver
 
 Developer Notes
 ---------------
-- To use a production-grade database (Postgres/MySQL), update the `DATABASES` setting in `Faster-Parts/E-commerce-Platform/settings.py` and set the appropriate environment variables.
+- To use a production-grade database (Postgres/MySQL), update the `DATABASES` setting in `settings.py` and set the appropriate environment variables.
 - Media and product images are stored under `item-image` and static files exist inside each app's static directory.
 - If there is no reliable `requirements.txt`, you can generate one from the current virtual environment:
 
@@ -71,11 +71,11 @@ pip freeze > E-commerce-Platform\requirements.txt
 
 Quick Links in the Repo
 ----------------------
-- Django app root: [Faster-Parts/E-commerce-Platform](Faster-Parts/E-commerce-Platform)
+- Django app root: [E-commerce-Platform](Faster-Parts/E-commerce-Platform)
 - Project-level README: [E-commerce-Platform/README.md](E-commerce-Platform/README.md)
 
 Next steps I can do for you:
-- Generate/update `E-commerce-Platform/requirements.txt` from the current environment.
+- Generate/update `requirements.txt` from the current environment.
 - Add deployment instructions for Docker, Heroku, or Render.
 
 End of summary.
