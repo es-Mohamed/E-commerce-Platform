@@ -40,7 +40,7 @@ Quick: How to Set Up and Run (Windows)
 2. Install requirements (if `requirements.txt` exists in `E-commerce-Platform`):
 
 ```powershell
-pip install -r Faster-Parts-Project\requirements.txt
+pip install -r E-commerce-Platform\requirements.txt
 # If no requirements file: pip install django sqlparse tzdata
 ```
 
