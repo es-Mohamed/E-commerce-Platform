@@ -1,0 +1,55 @@
+{% comment %} {% extends "core/base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans 'Your Cart' %}{% endblock %}
+
+{% block content %}
+<h1 class="text-3xl text-center mb-6">{% trans 'Your Shopping Cart' %}</h1>
+
+<div class="flex flex-col md:flex-row-reverse md:justify-center gap-6"> {# Added flex-row-reverse for RTL layout #}
+    {# Cart Content Area - Can be styled to resemble a sidebar more with additional CSS #}
+    <div class="w-full md:w-3/4 p-6 bg-gray-100 rounded-xl shadow-md">
+        {% if cart_items %}
+            {% for item in cart_items %}
+            <div class="flex {% if LANGUAGE_CODE == 'ar' %}flex-row-reverse{% else %}flex-row{% endif %} items-center justify-between py-4 border-b border-gray-200 last:border-b-0">
+                <div class="flex {% if LANGUAGE_CODE == 'ar' %}flex-row-reverse{% else %}flex-row{% endif %} items-center space-x-4 {% if LANGUAGE_CODE == 'ar' %}space-x-reverse{% endif %}">
+                    {# Item Image #}
+                    {% if item.item.image %}
+                        <img src="{{ item.item.image.url }}" alt="{{ item.item.name }}" class="w-20 h-20 object-cover rounded-md">
+                    {% else %}
+                        {# Placeholder if no image #}
+                        <div class="w-20 h-20 bg-gray-300 rounded-md flex items-center justify-center text-gray-500">No Image</div>
+                    {% endif %}
+                    {# Item Name #}
+                    <p class="text-lg font-semibold {% if LANGUAGE_CODE == 'ar' %}text-right{% else %}text-left{% endif %}">{{ item.item.name }}</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    {# Item Quantity #}
+                    <span class="text-gray-600">{% trans 'Qty' %}: {{ item.quantity }}</span>
+                    {# Item Price #}
+                    <span class="text-gray-800 font-bold">{{ item.total_price }} EGP</span>
+                    {# TODO: Add update/remove buttons later #}
+                </div>
+            </div>
+            {% endfor %}
+
+            {# Cart Summary / Total #}
+            <div class="mt-6 pt-4 border-t border-gray-300 flex {% if LANGUAGE_CODE == 'ar' %}flex-row-reverse{% else %}flex-row{% endif %} justify-between items-center text-xl font-bold">
+                <span>{% trans 'Total' %}:</span>
+                <span>{{ total_cart_price }} EGP</span>
+            </div>
+
+            <div class="mt-8 text-center">
+                <a href="#" class="inline-block py-3 px-6 bg-teal-500 text-white rounded-xl hover:bg-teal-700 text-lg">{% trans 'Proceed to Checkout' %}</a>
+            </div>
+
+        {% else %}
+            <p class="text-center text-gray-600">{% trans 'Your cart is empty.' %}</p>
+            <div class="mt-4 text-center">
+                <a href="{% url 'item:Items' %}" class="inline-block py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-700">{% trans 'Continue Shopping' %}</a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %} {% endcomment %}

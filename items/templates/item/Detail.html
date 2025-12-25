@@ -1,0 +1,77 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{{item.name}}{%endblock%}
+
+{% block content%}
+<div class="grid grid-cols-5 gap-6">
+    <div class="col-span-3">
+        <img src="{{item.image.url}}" alt="{{ item.name }}" class="rounded-xl">
+    </div>
+
+    <div class="col-span-2 p-6 bg-gray-100 rounded-xl ">
+        <h1 class="mb-6 text-3xl">{{item.name}}</h1>
+        <p class="text-gray-500"><strong>{% trans 'Price' %}: </strong>{{item.price}}</p> 
+        <p class="text-gray-500"><strong>{% trans 'Seller' %}: </strong>{{item.created_by.username}}</p> 
+        {% if item.description%}
+            <p class="text-gray-700"><strong>{% trans 'Description' %}</strong><br>{{item.description}}</p> 
+        {% endif %}
+
+        {% if request.user != item.created_by %}
+            <form action="{% url 'cart:add_to_cart' item.id %}" method="post">
+                {% csrf_token %}
+                <div class="mt-6 mb-6 flex border-y-4 py-7 items-center justify-between"> {# Adjusted button sizes for better visibility #}
+                    <div class="flex items-center">
+                        <button type="button" id="decrement-btn" class="px-5 py-2 bg-gray-200 text-gray-700 rounded-l">-</button>
+                        <input type="number" name="quantity" id="quantity-input" value="1" min="1" class="w-20 text-center border-t border-b border-gray-200 py-2">
+                        <button type="button" id="increment-btn" class="px-5 py-2 bg-gray-200 text-gray-700 rounded-r">+</button>
+                    </div>
+                    <button type="submit" class="px-6 py-3 text-lg font-semibold bg-gradient-to-r from-teal-400 to-teal-600 text-white rounded-full shadow-lg hover:from-teal-500 hover:to-teal-700 transition duration-300">
+                        {% trans 'Add to cart'%}
+                    </button>
+                </div>
+            </form>
+        {% endif %} 
+        {# --- End of Section for Quantity and Add to Cart --- #}
+
+        {% if request.user == item.created_by %}
+            <div class="mt-6 p-6 bg-white rounded-xl">
+                <p>{% trans 'This is your item!' %}</p> 
+
+                <a href="{% url 'item:Edit' item.id %}" class="inline-block mt-6 px-6 py-3 text-lg font-semibold bg-gradient-to-r from-teal-400 to-teal-600 text-white rounded-full shadow-lg hover:from-teal-500 hover:to-teal-700 transition duration-300">{% trans 'Edit' %}</a> 
+                <a href="{% url 'item:delete' item.id %}" class="inline-block mt-6 px-6 py-3 text-lg font-semibold bg-gradient-to-r from-red-400 to-red-600 text-white rounded-full shadow-lg hover:from-red-500 hover:to-red-700 transition duration-300">{% trans 'Delete' %}</a> 
+            </div>
+        {% comment %} {% else %}
+            <a href="{% url 'conversation:new' item_pk=item.id %}" class="inline-block mt-6 px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700">{% trans 'Add to Cart' %}</a>  {% endcomment %}
+        {% endif %} 
+    </div>
+</div>
+<div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl">
+    <h2 class="mb-12 text-2xl text-center">{% trans 'Related Items' %}</h2> 
+
+    <div class="grid grid-cols-3 gap-3">
+        {% for item in related_item %}
+            <div>
+                <a href={% url 'item:Detail' item.id %}>
+                    <div>
+                        <img src="{{item.image.url}}" class="rounded-t-xl">
+                    </div>
+
+                    <div class="p-6 bg-white rounded-b-xl">
+                        <h2 class="text-2xl">{{item.name}}</h2>
+                        <div class="py-3 flex {% if LANGUAGE_CODE == 'ar' %}flex-row-reverse{% else %}flex-row{% endif %} justify-between">
+                            <p class="text-gray-500">{% trans 'Price' %}: {{item.price}}</p> 
+                            <span class="text-xl">EGP</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endfor%}
+    </div>
+</div>
+
+{# Link to the external JavaScript file #}
+<script src="{% static 'core/js/quantity_control.js' %}"></script>
+{% endblock %}
+

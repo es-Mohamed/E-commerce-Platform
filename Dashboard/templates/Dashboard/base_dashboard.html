@@ -1,0 +1,49 @@
+{% extends 'core/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Dashboard" %}{% endblock %}
+
+{% block content %}
+<div class="flex h-full">
+    {# Sidebar #}
+    <aside class="w-64 bg-gray-50 p-6 shadow-md flex-shrink-0">
+        <nav>
+            <ul class="space-y-4">
+                <li>
+                    <a href="{% url 'Dashboard:index' %}" class="flex items-center p-3 text-lg font-semibold rounded-lg hover:bg-teal-100 transition">
+                        <i class="fas fa-tachometer-alt w-6 mr-3 rtl:ml-3"></i>
+                        <span>{% trans 'Dashboard' %}</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'conversation:inbox' %}" class="flex items-center p-3 text-lg font-semibold rounded-lg hover:bg-teal-100 transition">
+                        <i class="fas fa-inbox w-6 mr-3 rtl:ml-3"></i>
+                        <span>{% trans 'Inbox' %}</span>
+                    </a>
+                </li>
+                <li>
+                    {% if request.user.is_superuser %}
+                        <a href="{% url 'item:New' %}" class="flex items-center p-3 text-lg font-semibold rounded-lg hover:bg-teal-100 transition">
+                            <i class="fa-solid fa-pen-to-square w-6 mr-3 rtl:ml-3"></i>
+                            <span>{% trans 'Add New Item' %}</span>
+                        </a>
+                    {% endif %}
+                </li>
+                <li>
+                    <a href="#" class.="flex items-center w-full p-3 text-lg font-semibold rounded-lg hover:bg-red-100 transition">
+                        <i class="fas fa-sign-out-alt w-6 mr-3"></i>
+                        <span>{% trans 'Logout' %}</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    {# Main Dashboard Content #}
+    <main class="flex-1 p-8 overflow-y-auto">
+        {% block dashboard_content %}
+            {# Content for specific dashboard pages will go here #}
+        {% endblock %}
+    </main>
+</div>
+{% endblock %}

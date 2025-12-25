@@ -1,0 +1,83 @@
+{# puddle/core/templates/core/index.html #}
+
+{% extends "core/base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans 'Welcome'%}{% endblock %}
+
+{% block content %}
+    {# Hero Section #}
+    <div class="hero-section flex flex-col items-center justify-center text-center px-6">
+        <h1 class="text-lg font-bold">Faster Auto Spare Parts</h1>
+        <p class="text-5xl mt-4 font-bold">{% trans 'Reliable parts for your best ride' %}</p>
+        {# غيّر هنا: من 'items:items' إلى 'item:items' (لزر Shop Now) #}
+        <a href="{% url 'item:Items' %}" class="shop-now-button mt-12 inline-block">{% trans 'Shop Now' %}</a>
+    </div>
+
+    {# Search Bar #}
+    <div class="my-8 px-6">
+        {# غيّر هنا: من 'items:items' إلى 'item:items' (لنموذج البحث) #}
+        <form class="py-4 px-6 bg-gradient-to-r from-gray-100 to-gray-200 rounded-xl flex items-center shadow-lg {% if request.LANGUAGE_CODE == 'ar' %}flex-row-reverse{% endif %}" method="get" action="{% url 'item:Items' %}">
+            <input name="query" class="flex-grow py-3 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                    type="search" value="{{query}}" placeholder="{% trans 'Search for spare parts...' %}">
+            <button class="ml-4 py-3 px-6 text-lg bg-gradient-to-r from-teal-500 to-teal-700 text-white rounded-lg hover:from-teal-600 hover:to-teal-800 flex items-center justify-center shadow-md">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                </svg>
+                {% trans 'Search' %}
+            </button>
+        </form>
+    </div>
+
+    {# Browse by Category #}
+    <div class="mt-8 px-6 py-12 bg-gradient-to-r from-gray-100 to-gray-200 rounded-xl">
+        <h2 class="mb-12 text-2xl text-center font-bold text-gray-800">{% trans 'Browse by Category' %}</h2>
+        <div class="flex space-x-4 overflow-x-auto pb-4 custom-scrollbar items-center justify-center {% if request.LANGUAGE_CODE == 'ar' %}flex-row-reverse{% endif %}">
+            {# All Products link #}
+            <a href="{% url 'item:Items' %}" class="flex-shrink-0 w-24 h-24 flex flex-col items-center justify-center p-2 rounded-lg bg-white shadow-md hover:shadow-lg transition">
+                <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white">
+                    <i class="fa-solid fa-boxes-stacked text-lg"></i>
+                </div>
+                <p class="text-xs text-gray-700 mt-2 text-center font-medium">{% trans 'All Products' %}</p>
+            </a>
+
+            {# Iterate through your actual categories from the backend #}
+            {% for category_obj in categories %}
+                <a href="{% url 'item:Items' %}?category_id={{ category_obj.id }}" class="flex-shrink-0 w-24 h-24 flex flex-col items-center justify-center p-2 rounded-lg bg-white shadow-md hover:shadow-lg transition">
+                    <div class="w-10 h-10 bg-gray-500 rounded-full flex items-center justify-center text-white">
+                        <i class="fa-solid fa-wrench text-lg"></i>
+                    </div>
+                    <p class="text-xs text-gray-700 mt-2 text-center font-medium">{{ category_obj.name }}</p>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+    
+    {# Section for Newest Items #}
+    <div class="col-span-4 mt-6 px-3 py-4 bg-gray-100 rounded-xl">
+        <h2 class="mb-12 text-2xl text-center">{% trans "Our Products" %}</h2>
+
+        <div class="grid grid-cols-4 gap-3">
+            {% for item in items %}
+                <div>
+                    {# غيّر هنا: من 'items:detail' إلى 'item:detail' #}
+                    <a href={% url 'item:Detail' item.id %}>
+                        <div>
+                            <img src="{{ item.image.url }}" class="rounded-t-xl w-full h-full object-cover">
+                        </div>
+
+                        <div class="p-6 bg-white rounded-b-xl">
+                            <h2 class="text-2xl">{{ item.name }}</h2>
+                            <div class="py-3 flex {% if LANGUAGE_CODE == 'ar' %}flex-row-reverse{% else %}flex-row{% endif %} justify-between">
+                                <p class="text-gray-500">{% trans 'Price' %}: {{ item.price }}</p>
+                                <span class="text-xl">EGP</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+{% endblock %}

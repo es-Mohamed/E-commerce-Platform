@@ -1,0 +1,53 @@
+{% extends 'Dashboard/base_dashboard.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans 'Dashboard' %}{% endblock %}
+
+{% block dashboard_content %}
+    {# User Profile Section #}
+    <div class="bg-white p-6 rounded-xl shadow-sm mb-8 flex items-center space-x-4 {% if request.LANGUAGE_CODE == 'ar' %}flex-row-reverse space-x-reverse{% endif %}">
+        <div class="avatar-box txt-c ">
+            <img class="rad-half mb-5 h w" src="{% static 'core\images\image.png' %}" alt="" />
+            <h3 class="m-0">{{ request.user.username }}</h3>
+        </div>
+        <div class="info-box w-full txt-c-mobile">
+            <div class="box p-20 d-flex align-center">
+                <h4 class="c-grey w-full fs-15 m-0">Personal Information</h4>
+                <div class="fs-14">
+                    <span class="c-grey">Email:</span>
+                    <span>{{ request.user.email }}</span>
+                </div>
+                <div class="fs-14">
+                    <span class="c-grey">Phone:</span>
+                    <span>019123456789</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {# Admin-only Products Section #}
+    {% if request.user.is_superuser %}
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+            <h2 class="mb-6 text-2xl font-semibold">{% trans 'My Items' %}</h2>
+
+            <div class="space-y-4">
+                {% for item in items %}
+                    <a href="{% url 'item:Detail' item.id %}" class="block hover:bg-gray-50 transition rounded-lg">
+                        <div class="flex items-center bg-white p-4 rounded-lg shadow-sm border border-gray-200 space-x-4 {% if request.LANGUAGE_CODE == 'ar' %}flex-row-reverse space-x-reverse{% endif %}">
+                            <img src="{{ item.image.url }}" alt="{{ item.name }}" class="w-24 h-24 object-cover rounded-md">
+                            <div class="flex-grow">
+                                <h3 class="text-xl font-bold text-gray-800">{{ item.name }}</h3>
+                            </div>
+                            <div class="text-xl font-semibold text-teal-600">
+                                <span>{{ item.price }} EGP</span>
+                            </div>
+                        </div>
+                    </a>
+                {% empty %}
+                    <p class="text-gray-500">{% trans 'You have not added any items yet.' %}</p>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

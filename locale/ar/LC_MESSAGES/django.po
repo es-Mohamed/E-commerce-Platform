@@ -1,0 +1,274 @@
+# Arabic translations for Puddle project.
+# Copyright (C) 2025 Puddle Team
+# This file is distributed under the same license as the Puddle project.
+msgid ""
+msgstr ""
+"Project-Id-Version: Puddle 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-31 18:06+0300\n"
+"PO-Revision-Date: 2025-06-11 17:35+0300\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+#: .\Dashboard\templates\Dashboard\base_dashboard.html:4
+#: .\Dashboard\templates\Dashboard\base_dashboard.html:15
+#: .\Dashboard\templates\Dashboard\index.html:4
+msgid "Dashboard"
+msgstr "لوحة التحكم"
+
+#: .\Dashboard\templates\Dashboard\base_dashboard.html:21
+#: .\conversation\templates\conversation\inbox.html:4
+#: .\conversation\templates\conversation\inbox.html:7
+msgid "Inbox"
+msgstr "البريد الوارد"
+
+#: .\Dashboard\templates\Dashboard\base_dashboard.html:27
+msgid "Logout"
+msgstr "تسجيل الخروج"
+
+#: .\Dashboard\templates\Dashboard\index.html:21
+#, fuzzy
+msgid "My Items"
+msgstr "منتجاتي"
+
+#: .\Dashboard\templates\Dashboard\index.html:37
+msgid "You have not added any items yet."
+msgstr "لم تقم بإضافة أي عناصر بعد."
+
+#: .\conversation\templates\conversation\detail.html:4
+#: .\conversation\templates\conversation\detail.html:7
+msgid "Conversation"
+msgstr "المحادثة"
+
+#: .\conversation\templates\conversation\detail.html:28
+#: .\conversation\templates\conversation\new.html:23
+msgid "Send"
+msgstr "إرسال"
+
+#: .\conversation\templates\conversation\new.html:4
+msgid "New conversation"
+msgstr "محادثة جديدة"
+
+#: .\conversation\templates\conversation\new.html:7
+msgid "New Conversation"
+msgstr "محادثة جديدة"
+
+#: .\core\templates\core\base.html:31
+msgid "Home"
+msgstr "الرئيسية"
+
+#: .\core\templates\core\base.html:32
+msgid "Products"
+msgstr "المنتجات"
+
+#: .\core\templates\core\base.html:33 .\core\templates\core\contact.html:7
+msgid "Contact Us"
+msgstr "اتصل بنا"
+
+#: .\core\templates\core\base.html:34
+msgid "About Us"
+msgstr "من نحن"
+
+#: .\core\templates\core\base.html:47
+msgid "Switch to English"
+msgstr "التحويل إلى الإنجليزية"
+
+#: .\core\templates\core\base.html:56
+msgid "Switch to Arabic"
+msgstr "التحويل إلى العربية"
+
+#: .\core\templates\core\base.html:73
+msgid "Add New Item"
+msgstr "إضافة منتج جديد"
+
+#: .\core\templates\core\base.html:77
+msgid "My Account"
+msgstr "حسابي"
+
+#: .\core\templates\core\base.html:82
+msgid "Log in"
+msgstr "تسجيل الدخول"
+
+#: .\core\templates\core\base.html:101
+msgid "Your Cart"
+msgstr "عربة التسوق"
+
+#: .\core\templates\core\base.html:106
+msgid "Loading cart..."
+msgstr "جارٍ تحميل العربة..."
+
+#: .\core\templates\core\base.html:109
+msgid "Total"
+msgstr "المجموع"
+
+#: .\core\templates\core\base.html:110
+msgid "Proceed to Checkout"
+msgstr "المتابعة للدفع"
+
+#: .\core\templates\core\base.html:121 .\core\templates\core\base.html:127
+msgid "About"
+msgstr "حول"
+
+#: .\core\templates\core\base.html:122
+msgid "Made with love by Moamed Mady to Faster Company."
+msgstr "مصنوع بحب بواسطة محمد ماضي لشركة فاستر."
+
+#: .\core\templates\core\base.html:125
+msgid "Menu"
+msgstr "القائمة"
+
+#: .\core\templates\core\base.html:128
+msgid "Contact"
+msgstr "اتصل بنا"
+
+#: .\core\templates\core\base.html:129
+msgid "Privacy Policy"
+msgstr "سياسة الخصوصية"
+
+#: .\core\templates\core\base.html:130
+msgid "Terms of Use"
+msgstr "شروط الاستخدام"
+
+#: .\core\templates\core\contact.html:11
+msgid "Phone"
+msgstr "الهاتف"
+
+#: .\core\templates\core\contact.html:15 .\core\templates\core\contact.html:19
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#: .\core\templates\core\index.html:7
+msgid "Welcome"
+msgstr "مرحباً"
+
+#: .\core\templates\core\index.html:13
+msgid "Reliable parts for your best ride"
+msgstr "قطع غيار موثوقة لأفضل قيادة"
+
+#: .\core\templates\core\index.html:15
+msgid "Shop Now"
+msgstr "تسوق الآن"
+
+#: .\core\templates\core\index.html:23
+msgid "Search for spare parts..."
+msgstr "...ابحث عن قطع غيار"
+
+#: .\core\templates\core\index.html:28
+msgid "Search"
+msgstr "بحث"
+
+#: .\core\templates\core\index.html:35
+msgid "Browse by Category"
+msgstr "تصفح حسب الفئة"
+
+#: .\core\templates\core\index.html:42
+msgid "All Products"
+msgstr "كل المنتجات"
+
+#: .\core\templates\core\index.html:59 .\items\templates\item\Items.html:31
+msgid "Our Products"
+msgstr "منتجاتنا"
+
+#: .\core\templates\core\index.html:73 .\items\templates\item\Detail.html:15
+#: .\items\templates\item\Detail.html:65 .\items\templates\item\Items.html:44
+msgid "Price"
+msgstr "السعر"
+
+#: .\items\templates\item\Detail.html:16
+msgid "Seller"
+msgstr "البائع"
+
+#: .\items\templates\item\Detail.html:18
+msgid "Description"
+msgstr "الوصف"
+
+#: .\items\templates\item\Detail.html:31
+msgid "Add to cart"
+msgstr "أضف إلى السلة"
+
+#: .\items\templates\item\Detail.html:40
+msgid "This is your item!"
+msgstr "هذا هو منتجك!"
+
+#: .\items\templates\item\Detail.html:42
+msgid "Edit"
+msgstr "تعديل"
+
+#: .\items\templates\item\Detail.html:43
+msgid "Delete"
+msgstr "حذف"
+
+#: .\items\templates\item\Detail.html:52
+msgid "Related Items"
+msgstr "عناصر ذات صلة"
+
+#: .\items\templates\item\Items.html:4
+msgid "Items"
+msgstr "العناصر"
+
+#: .\items\templates\item\form.html:26
+msgid "Submit"
+msgstr "إرسال"
+
+#~ msgid "New Items"
+#~ msgstr "عناصر جديدة"
+
+#~ msgid "Browse"
+#~ msgstr "تصفح"
+
+#~ msgid "Sign up"
+#~ msgstr "تسجيل حساب"
+
+#~ msgid "Categories"
+#~ msgstr "فئات"
+
+#~ msgid "Newest Items"
+#~ msgstr "أحدث العناصر"
+
+#~ msgid "name"
+#~ msgstr "الاسم"
+
+#~ msgid "description"
+#~ msgstr "الوصف"
+
+#~ msgid "is sold"
+#~ msgstr "تم البيع"
+
+#~ msgid "created at"
+#~ msgstr "تاريخ الإنشاء"
+
+#~ msgid "category"
+#~ msgstr "فئة"
+
+#~ msgid "Pay Now"
+#~ msgstr "ادفع الآن"
+
+#~ msgid "Find where ever you want..."
+#~ msgstr "ابحث حيثما تشاء..."
+
+#~ msgid "Product Description"
+#~ msgstr "وصف المنتج"
+
+#~ msgid "Name"
+#~ msgstr "الاسم"
+
+#~ msgid "Image"
+#~ msgstr "الصورة"
+
+#~ msgid "Is Sold"
+#~ msgstr "مباع؟"
+
+#~ msgid "Edit Item"
+#~ msgstr "تعديل المنتج"
+
+#~ msgid "English"
+#~ msgstr "الإنجليزية"
+
+#~ msgid "العربية"
+#~ msgstr "العربية"

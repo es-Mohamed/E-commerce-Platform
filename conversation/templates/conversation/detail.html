@@ -1,0 +1,30 @@
+{% extends 'core/base.html' %}
+{% load i18n %} 
+
+{% block title %}{% trans 'Conversation' %}{% endblock %} 
+
+{% block content %}
+<h1 class="mb-6 text-3xl">{% trans 'Conversation' %}</h1> 
+
+<div class="space-y-6">
+    {% for message in conversations.messages.all %}
+        <div class="p-6 flex {% if message.created_by == request.user %}bg-blue-100{% else %}bg-gray-100{% endif %} rounded-xl">
+            <div>
+                {# Dynamic content like username and timestamp are not translated directly #}
+                <p class="mb-4"><strong>{{ message.created_by.username }}</strong> @ {{ message.created_at }}</p>
+                {# Message content from DB is translated via modeltranslation #}
+                <p>{{ message.content }}</p> 
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<form method="post" action="." class="mt-6">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    {# Updated "Send" button to match new style #}
+    <button class="px-4 py-2 text-sm font-semibold bg-gradient-to-r from-teal-400 to-teal-600 text-white rounded-full shadow-lg hover:from-teal-500 hover:to-teal-700 transition duration-300">{% trans 'Send' %}</button>
+</form>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "core/base.html" %}
+
+{% block title %} Log in {% endblock %}
+
+{% block content %}
+
+<div class="w-1/2 my-6 mx-auto p-6 bg-gray-100 rounded-xl">
+    <h1 class="mb-6 text-3xl font-bold text-center">Log in</h1>
+    <form method="post" action="." autocomplete="off" class="space-y-6">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <label class="mb-2 inline-block font-medium">Username</label><br>
+            {{ form.username }}
+        </div>
+
+        <div class="mb-3">
+            <label class="mb-2 inline-block font-medium">Password</label><br>
+            {{ form.password }}
+        </div>
+
+        {% if form.errors or form.non_field_errors %}
+            <div class="mb-3 p-6 bg-red-100 rounded-xl">
+                {% for field in form %}
+                    {{ field.errors }}
+                {% endfor %}
+
+                {{ form.non_field_errors }}
+            </div>
+        {% endif %}
+
+        <div class="text-center">
+            <button class="py-3 px-10 text-lg bg-gradient-to-r from-teal-400 to-teal-600 hover:from-teal-500 hover:to-teal-700 text-white font-semibold rounded-full shadow-lg transition duration-300">Log in</button>
+        </div>
+    </form>
+
+    <div class="mt-6 text-center space-y-2">
+        <a href="{% url 'core:Signup' %}" class="text-teal-500 hover:underline font-medium">Create an account</a>
+        <br>
+        <a href="#" class="text-teal-500 hover:underline font-medium">Forgot password?</a>
+    </div>
+</div>
+    
+{% endblock %}

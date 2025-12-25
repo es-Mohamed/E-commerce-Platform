@@ -1,0 +1,23 @@
+{% extends "core/base.html" %}
+{% load i18n %}
+
+{% block title %} contact {% endblock %}
+
+{% block content %}
+    <h1 class="text-3xl font-bold text-center my-6">{% trans 'Contact Us' %}</h1>
+
+    <div class="max-w-4xl mx-auto grid grid-cols-3 gap-6">
+        <div class="bg-white text-gray-800 p-10 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+            <h2 class="text-2xl font-semibold mb-4 text-center">{% trans 'Phone' %}</h2>
+            <a href="tel:+1234567890" class="text-xl text-center block text-black hover:underline">+201505471068</a>
+        </div>
+        <div class="bg-white text-gray-800 p-10 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+            <h2 class="text-2xl font-semibold mb-4 text-center">{% trans 'Email' %}</h2>
+            <a href="mailto:support@fasterparts.com" class="text-xl text-center block text-black hover:underline">support@fasterparts.com</a>
+        </div>
+        <div class="bg-white text-gray-800 p-10 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+            <h2 class="text-2xl font-semibold mb-4 text-center">{% trans 'Email' %}</h2>
+            <a href="mailto:info@MohamedMady.com" class="text-xl text-center block text-black hover:underline">info@MohamedMady.com</a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,277 @@
+# English translations for Puddle project.
+# Copyright (C) 2025 Puddle Team
+# This file is distributed under the same license as the Puddle project.
+msgid ""
+msgstr ""
+"Project-Id-Version: Puddle 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-31 18:06+0300\n"
+"PO-Revision-Date: 2025-06-11 17:35+0300\n"
+"Last-Translator: \n"
+"Language-Team: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\Dashboard\templates\Dashboard\base_dashboard.html:4
+#: .\Dashboard\templates\Dashboard\base_dashboard.html:15
+#: .\Dashboard\templates\Dashboard\index.html:4
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: .\Dashboard\templates\Dashboard\base_dashboard.html:21
+#: .\conversation\templates\conversation\inbox.html:4
+#: .\conversation\templates\conversation\inbox.html:7
+msgid "Inbox"
+msgstr "Inbox"
+
+#: .\Dashboard\templates\Dashboard\base_dashboard.html:27
+msgid "Logout"
+msgstr ""
+
+#: .\Dashboard\templates\Dashboard\index.html:21
+#, fuzzy
+msgid "My Items"
+msgstr "MY Items"
+
+#: .\Dashboard\templates\Dashboard\index.html:37
+msgid "You have not added any items yet."
+msgstr ""
+
+#: .\conversation\templates\conversation\detail.html:4
+#: .\conversation\templates\conversation\detail.html:7
+msgid "Conversation"
+msgstr "Conversation"
+
+#: .\conversation\templates\conversation\detail.html:28
+#: .\conversation\templates\conversation\new.html:23
+msgid "Send"
+msgstr "Send"
+
+#: .\conversation\templates\conversation\new.html:4
+msgid "New conversation"
+msgstr "New conversation"
+
+#: .\conversation\templates\conversation\new.html:7
+msgid "New Conversation"
+msgstr "New Conversation"
+
+#: .\core\templates\core\base.html:31
+msgid "Home"
+msgstr ""
+
+#: .\core\templates\core\base.html:32
+#, fuzzy
+msgid "Products"
+msgstr "Product Name"
+
+#: .\core\templates\core\base.html:33 .\core\templates\core\contact.html:7
+#, fuzzy
+msgid "Contact Us"
+msgstr "Contact"
+
+#: .\core\templates\core\base.html:34
+#, fuzzy
+msgid "About Us"
+msgstr "About"
+
+#: .\core\templates\core\base.html:47
+msgid "Switch to English"
+msgstr "Switch to English"
+
+#: .\core\templates\core\base.html:56
+msgid "Switch to Arabic"
+msgstr "Switch to Arabic"
+
+#: .\core\templates\core\base.html:73
+msgid "Add New Item"
+msgstr "Add New Item"
+
+#: .\core\templates\core\base.html:77
+msgid "My Account"
+msgstr ""
+
+#: .\core\templates\core\base.html:82
+msgid "Log in"
+msgstr "Log in"
+
+#: .\core\templates\core\base.html:101
+msgid "Your Cart"
+msgstr ""
+
+#: .\core\templates\core\base.html:106
+msgid "Loading cart..."
+msgstr ""
+
+#: .\core\templates\core\base.html:109
+msgid "Total"
+msgstr ""
+
+#: .\core\templates\core\base.html:110
+msgid "Proceed to Checkout"
+msgstr ""
+
+#: .\core\templates\core\base.html:121 .\core\templates\core\base.html:127
+msgid "About"
+msgstr "About"
+
+#: .\core\templates\core\base.html:122
+msgid "Made with love by Moamed Mady to Faster Company."
+msgstr "Made with love by Moamed Mady to Faster Company."
+
+#: .\core\templates\core\base.html:125
+msgid "Menu"
+msgstr "Menu"
+
+#: .\core\templates\core\base.html:128
+msgid "Contact"
+msgstr "Contact"
+
+#: .\core\templates\core\base.html:129
+msgid "Privacy Policy"
+msgstr "Privacy Policy"
+
+#: .\core\templates\core\base.html:130
+msgid "Terms of Use"
+msgstr "Terms of Use"
+
+#: .\core\templates\core\contact.html:11
+msgid "Phone"
+msgstr ""
+
+#: .\core\templates\core\contact.html:15 .\core\templates\core\contact.html:19
+msgid "Email"
+msgstr ""
+
+#: .\core\templates\core\index.html:7
+msgid "Welcome"
+msgstr "Welcome"
+
+#: .\core\templates\core\index.html:13
+msgid "Reliable parts for your best ride"
+msgstr ""
+
+#: .\core\templates\core\index.html:15
+msgid "Shop Now"
+msgstr ""
+
+#: .\core\templates\core\index.html:23
+msgid "Search for spare parts..."
+msgstr ""
+
+#: .\core\templates\core\index.html:28
+msgid "Search"
+msgstr "Search"
+
+#: .\core\templates\core\index.html:35
+#, fuzzy
+msgid "Browse by Category"
+msgstr "Category"
+
+#: .\core\templates\core\index.html:42
+msgid "All Products"
+msgstr ""
+
+#: .\core\templates\core\index.html:59 .\items\templates\item\Items.html:31
+msgid "Our Products"
+msgstr ""
+
+#: .\core\templates\core\index.html:73 .\items\templates\item\Detail.html:15
+#: .\items\templates\item\Detail.html:65 .\items\templates\item\Items.html:44
+msgid "Price"
+msgstr "Price"
+
+#: .\items\templates\item\Detail.html:16
+msgid "Seller"
+msgstr "Seller"
+
+#: .\items\templates\item\Detail.html:18
+msgid "Description"
+msgstr "Description"
+
+#: .\items\templates\item\Detail.html:31
+msgid "Add to cart"
+msgstr ""
+
+#: .\items\templates\item\Detail.html:40
+msgid "This is your item!"
+msgstr "This is your item!"
+
+#: .\items\templates\item\Detail.html:42
+msgid "Edit"
+msgstr "Edit"
+
+#: .\items\templates\item\Detail.html:43
+msgid "Delete"
+msgstr "Delete"
+
+#: .\items\templates\item\Detail.html:52
+msgid "Related Items"
+msgstr "Related Items"
+
+#: .\items\templates\item\Items.html:4
+msgid "Items"
+msgstr "Items"
+
+#: .\items\templates\item\form.html:26
+msgid "Submit"
+msgstr "Submit"
+
+#~ msgid "New Items"
+#~ msgstr "New Items"
+
+#~ msgid "Browse"
+#~ msgstr "Browse"
+
+#~ msgid "Sign up"
+#~ msgstr "Sign up"
+
+#~ msgid "Categories"
+#~ msgstr "Categories"
+
+#~ msgid "Newest Items"
+#~ msgstr "Newest Items"
+
+#~ msgid "name"
+#~ msgstr "Name"
+
+#~ msgid "description"
+#~ msgstr "Description"
+
+#~ msgid "is sold"
+#~ msgstr "Is sold"
+
+#~ msgid "created at"
+#~ msgstr "Created at"
+
+#~ msgid "category"
+#~ msgstr "Category"
+
+#~ msgid "Pay Now"
+#~ msgstr "Pay Now"
+
+#~ msgid "Find where ever you want..."
+#~ msgstr "Find where ever you want..."
+
+#~ msgid "Product Description"
+#~ msgstr "Product Description"
+
+#~ msgid "Name"
+#~ msgstr "Name"
+
+#~ msgid "Image"
+#~ msgstr "Image"
+
+#~ msgid "Is Sold"
+#~ msgstr "Is Sold"
+
+#~ msgid "Edit Item"
+#~ msgstr "Edit Item"
+
+#~ msgid "English"
+#~ msgstr "English"
+
+#~ msgid "العربية"
+#~ msgstr "العربية"
