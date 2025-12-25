@@ -27,7 +27,6 @@ Project Structure (important locations)
 - Project README: [README.md](README.md)
 - Django settings: [settings.py](settings.py)
 - Django management script: [manage.py](manage.py)
-- Local database file: [db.sqlite3](db.sqlite3)
 - Virtual environment folder: [env](env)
 
 Quick: How to Set Up and Run (Windows)
