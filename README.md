@@ -2,7 +2,7 @@
 
 Description
 -----------
-`Faster-Parts` is a local e-commerce platform based on Django (located in `Faster-Parts-Project`). The project includes apps for item management, shopping cart, user dashboard, and user-to-user conversations.
+`Faster-Parts` is a local e-commerce platform based on Django (located in `Faster-Parts`). The project includes apps for item management, shopping cart, user dashboard, and user-to-user conversations.
 
 Features and What the Project Provides
 -------------------------------------
@@ -17,7 +17,7 @@ Tech Stack and Tools
 --------------------
 - Language: Python (virtual environment in `env` indicates Python 3.11).
 - Framework: Django (project README mentions Django 5.2).
-- Database: SQLite used by default (`Faster-Parts-Project/Faster-Parts/db.sqlite3`).
+- Database: SQLite used by default (`Faster-Parts/Faster-Parts/db.sqlite3`).
 - Virtual environment: `env/` contains the project's virtualenv with activation scripts (`env\Scripts\activate`).
 - Common packages observed in the environment: `sqlparse`, `tzdata` (check `env/Lib/site-packages`).
 - Frontend: HTML and Tailwind CSS used in templates and static files.
