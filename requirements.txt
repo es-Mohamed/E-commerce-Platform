@@ -14,3 +14,4 @@ django-modeltranslation
 djangorestframework
 django-cors-headers
 python-dotenv
+Pillow
