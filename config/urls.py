@@ -37,7 +37,7 @@ def landing_view(request):
         <head>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width,initial-scale=1">
-            <title>Puddle E-commerce API</title>
+            <title>Auto parts API</title>
             <style>
                 :root { color-scheme: dark; }
                 body { background:#0b1220; color:#e6eef8; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; height:100vh; margin:0; display:flex; align-items:center; justify-content:center; }
