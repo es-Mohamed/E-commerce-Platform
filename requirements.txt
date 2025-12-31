@@ -1,0 +1,12 @@
+# Minimal requirements placeholder for E-commerce-Platform
+# It's recommended to activate the project's virtualenv and run:
+#   pip freeze > requirements.txt
+# to capture exact versions.
+
+Django>=4.2
+sqlparse
+tzdata
+gunicorn
+whitenoise
+dj-database-url
+psycopg2-binary

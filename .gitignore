@@ -1,0 +1,42 @@
+# Project-level .gitignore for E-commerce-Platform
+
+# Virtual environment
+.env/
+.venv/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# SQLite DB
+*.sqlite3
+db.sqlite3
+
+# Media and uploads
+.item-image/
+.media/
+.staticfiles/
+
+# Environment variables
+.env
+.env.*
+venv/
+ENV/
+
+# IDE/editor
+.vscode/
+.idea/
+*.sublime-*
+*.swp
+
+# Node
+node_modules/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
