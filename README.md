@@ -78,3 +78,47 @@ Next steps I can do for you:
 - Add deployment instructions for Docker, Heroku, or Render.
 
 End of summary.
+
+Deployment (recommended)
+------------------------
+Below are recommended commands and notes for deploying this Django project to Render.com or running it locally with a production-like server.
+
+1) Environment variables (set these on Render or export locally):
+
+	- `SECRET_KEY` — a long random string
+	- `DEBUG` — `False` in production
+	- `DJANGO_ALLOWED_HOSTS` — space-separated hosts (e.g. `example.com my-app.onrender.com`)
+	- `DATABASE_URL` — Postgres URL when using a managed Postgres database
+
+2) Build / start commands (Render web service):
+
+	- Build command:
+
+	  ```bash
+	  ./build.sh
+	  ```
+
+	- Start command (Render or local gunicorn):
+
+	  ```bash
+	  gunicorn config.wsgi:application --bind 0.0.0.0:8000 --workers 3
+	  ```
+
+3) Local quick check:
+
+	```bash
+	python -m venv .venv
+	source .venv/bin/activate   # or .venv\Scripts\activate on Windows
+	pip install -r requirements.txt
+	python manage.py migrate
+	python manage.py collectstatic --no-input
+	gunicorn config.wsgi:application --bind 127.0.0.1:8000
+	```
+
+4) Notes for Render.com
+
+	- Use the `build.sh` script as the "Build Command" so static files are collected and migrations run.
+	- Set the "Start Command" to: `gunicorn config.wsgi:application`
+	- Choose the Postgres add-on or provide `DATABASE_URL` for production; `dj-database-url` is included in `requirements.txt`.
+
+If you want, I can also add a `Procfile` and a `render.yaml` with sensible defaults.
