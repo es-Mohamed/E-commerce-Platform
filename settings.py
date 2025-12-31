@@ -10,7 +10,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'change-me-for-local-testing-only')
 DEBUG = os.environ.get('DEBUG', 'False') in ('1', 'True', 'true')
 
 # Example: set DJANGO_ALLOWED_HOSTS="example.com 127.0.0.1"
-ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', 'localhost 127.0.0.1').split()
+ALLOWED_HOSTS = ['*']
 
 LOGIN_URL = "/login/"
 LOGIN_REDIRECT_URL = "/"
