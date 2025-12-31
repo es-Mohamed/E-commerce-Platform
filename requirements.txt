@@ -13,3 +13,4 @@ psycopg2-binary
 django-modeltranslation
 djangorestframework
 django-cors-headers
+python-dotenv
