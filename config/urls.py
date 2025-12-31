@@ -49,8 +49,8 @@ def landing_view(request):
         </head>
         <body>
             <div class="card">
-                <h1>Puddle E-commerce API</h1>
-                <p>Experimental Demo Version — برنامج تجريبي</p>
+                <h1>Auto parts API</h1>
+                <p>Experimental Demo Version </p>
                 <footer>Powered by Mohamed Mady</footer>
             </div>
         </body>
