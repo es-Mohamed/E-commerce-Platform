@@ -11,3 +11,5 @@ whitenoise
 dj-database-url
 psycopg2-binary
 django-modeltranslation
+djangorestframework
+django-cors-headers
