@@ -18,9 +18,10 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from django.conf.urls.i18n import i18n_patterns
 from django.views.i18n import set_language
+from django.views.static import serve
 from django.http import HttpResponse
 from core.views import index as core_index
 
@@ -37,4 +38,8 @@ urlpatterns = [
     path('inbox/', include('conversation.urls')),
     path('Dashboard/', include('Dashboard.urls')),
     path('cart/', include('cart.urls')),
-) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+ ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + [
+    # Force-serve media and static files from filesystem (for demo environments)
+    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+    re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
+]
