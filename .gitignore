@@ -11,13 +11,15 @@ __pycache__/
 *.pyc
 
 # SQLite DB
-*.sqlite3
-db.sqlite3
+# (db.sqlite3 will be committed for this portfolio demo)
+#*.sqlite3
+#db.sqlite3
 
 # Media and uploads
-.item-image/
-.media/
-.staticfiles/
+# (allow committing product images for demo)
+#.item-image/
+#.media/
+#.staticfiles/
 
 # Environment variables
 .env
