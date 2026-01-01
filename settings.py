@@ -12,7 +12,7 @@ DEBUG = os.environ.get('DEBUG', 'False') in ('1', 'True', 'true')
 # Example: set DJANGO_ALLOWED_HOSTS="example.com 127.0.0.1"
 ALLOWED_HOSTS = ['*']
 
-LOGIN_URL = "/login/"
+LOGIN_URL = '/admin/login/'
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL= "/"
 # Application definition
@@ -115,7 +115,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
@@ -127,5 +127,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static", 
+    os.path.join(BASE_DIR, 'static'), 
 ]
