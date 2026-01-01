@@ -22,6 +22,7 @@ from django.urls import path, include
 from django.conf.urls.i18n import i18n_patterns
 from django.views.i18n import set_language
 from django.http import HttpResponse
+from core.views import index as core_index
 
 
 
@@ -30,6 +31,7 @@ urlpatterns = [
     path('set-language/', set_language, name='set_language'),
 ] + i18n_patterns(
     path('admin/', admin.site.urls),
+    path('', core_index, name='index'),
     path('home/', include('core.urls')),
     path('items/', include('items.urls')),
     path('inbox/', include('conversation.urls')),
