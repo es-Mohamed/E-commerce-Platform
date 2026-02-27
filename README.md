@@ -11,11 +11,6 @@ This repository contains a prototype e‑commerce platform developed for learnin
 
 Security is taken seriously. All forms and POST endpoints are protected with Django’s built‑in **CSRF tokens**, ensuring robustness against cross‑site request forgery attacks.
 
-A `screenshots` folder lives at the project root and holds preview images used in this README. Screenshots are referenced using HTML tags like:
-
-```html
-<img src="screenshots/homepage.png" width="600">
-```
 
 ---
 
@@ -106,8 +101,9 @@ This project is easily containerized or deployed to any WSGI/ASGI‑compatible h
 ## ���‍��� Developed By
 
 **Mohamed Mady**  
-- LinkedIn: [LinkedIn Profile](https://linkedin.com/in/<your-profile>)  
-- GitHub: [github.com/<your-username>](https://github.com/<your-username>)
+- LinkedIn: [LinkedIn Profile](https://www.linkedin.com/in/mohamed-mady-940b87264/)  
+- Portfolio: [My website](https://mohamedmadyportfolio.vercel.app/)  
+
 
 ---
 
